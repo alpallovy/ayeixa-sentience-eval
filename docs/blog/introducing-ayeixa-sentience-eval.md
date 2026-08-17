@@ -15,17 +15,17 @@ When autonomous agents convert structured internal states and tool execution pay
 ## 2. Core Architecture
 Sentience Eval is composed of four inspection engines:
 
-1. **RawJsonLeakDetector**: Identifies raw JSON objects, unbalanced brace delimiters, and unrendered system metadata within dialogue strings.
+1. **RawJsonLeakDetector**: Identifies raw JSON structures, unbalanced brace delimiters, and unrendered system delimiters matching configured regex patterns.
 2. **HallucinationDetector**: Compares response claims against ground-truth context to flag ungrounded assertions.
 3. **BehavioralCleanlinessHarness**: Enforces conversational naturalness rules by detecting forbidden robotic clichés, prompt leaks, and meta-tokens.
-4. **SentienceBenchmarkRunner**: Executes end-to-end evaluation batches and computes a weighted cleanliness index (0–100).
+4. **SentienceBenchmarkRunner**: Executes evaluation batches and computes a weighted cleanliness index (0–100).
 
 ---
 
 ## 3. Implemented Capabilities & Test Verification
 Verified with hermetic unit tests:
-- **Raw JSON Detection**: 100% detection of unescaped JSON state (`tests/json-leak.test.ts`).
-- **Cleanliness Suite**: Flagging cliché markers and delimiter imbalances (`tests/cleanliness.test.ts`).
+- **Raw JSON Detection**: Detects tested unescaped JSON state and delimiter leaks (`tests/json-leak.test.ts`).
+- **Cleanliness Suite**: Flags tested cliché markers and delimiter imbalances (`tests/cleanliness.test.ts`).
 - **Benchmark Runner**: Weighted penalty scoring calculation (`tests/benchmark.test.ts`).
 
 Test Verification Receipt: **6/6 hermetic unit tests passing** (0 failures).
@@ -60,7 +60,7 @@ console.log("Violations Detected:", evaluation.violations);
 
 ## 5. Limitations & Roadmap
 - Pre-release `v0.1.0-alpha`.
-- Focused on deterministic token and rule-based assertion; ML-based semantic grounding extensions are planned on the 2026–2028 roadmap.
+- The rule harness detects structural and lexical patterns covered by its rule set; statistical NLP semantic grounding models are scheduled on the 2026–2028 roadmap.
 - Public npm publication is pending.
 
 ---
