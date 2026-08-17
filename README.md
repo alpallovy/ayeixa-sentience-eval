@@ -39,3 +39,6 @@ console.log("Violations Detected:", report.violations);
 
 ## License
 Distributed under the **MIT** License. See `LICENSE` for details.
+
+## Technical Deep Dive
+Read the full launch technical article: [`docs/blog/introducing-ayeixa-sentience-eval.md`](docs/blog/introducing-ayeixa-sentience-eval.md)
