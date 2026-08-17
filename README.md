@@ -2,21 +2,40 @@
 
 > Anti-hallucination, raw-JSON leak detector, and behavioral cleanliness assertion harness for autonomous conversational agents.
 
-## Overview
-Ayeixa Sentience & Cleanliness Eval is an open-source component developed under the Ayeixa Public-Good Flywheel.
-It provides modular, high-reliability infrastructure licensed under permissive **MIT**.
+## Status: Pre-Release (v0.1.0-alpha)
+*Note: Public npm registry publication is pending. To use or evaluate this package, clone and build locally.*
 
-## Quick Start
+## Features
+- **Raw JSON & State Leak Detection**: Pinpoints unescaped JSON structures, raw system metadata, and delimiter violations in conversational agent outputs.
+- **Factual Grounding & Hallucination Checks**: Evaluates response claims against ground truth facts and flags unsupported assertions.
+- **Behavioral Cleanliness Suite**: Detects forbidden robotic clichés, prompt leaks, unrendered tool calls, and meta-tokens.
+- **Automated Score Benchmark**: Calculates weighted cleanliness index (0-100) with detailed violation categorization.
+
+## Installation & Local Build
 ```bash
-npm install @ayeixa/sentience-eval
+# Clone the repository
+git clone https://github.com/alpallovy/ayeixa-sentience-eval.git
+cd ayeixa-sentience-eval
+
+# Install dependencies and build
+npm install
+npm run build
+npm test
 ```
 
+## Quick Start
 ```typescript
-import { init } from '@ayeixa/sentience-eval';
+import { SentienceBenchmarkRunner } from './src';
 
-// Example Usage
-init()
+const runner = new SentienceBenchmarkRunner();
+const report = runner.evaluate({
+  output: "Here is your plan: {\"internalState\": true, \"unparsed\": 123}",
+  groundTruthContext: ["The user requested a software plan."]
+});
+
+console.log("Cleanliness Score:", report.cleanlinessScore);
+console.log("Violations Detected:", report.violations);
 ```
 
 ## License
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the **MIT** License. See `LICENSE` for details.

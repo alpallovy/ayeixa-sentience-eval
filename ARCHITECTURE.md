@@ -1,16 +1,13 @@
-# Architecture Specification: Ayeixa Sentience & Cleanliness Eval
+# Architecture: Ayeixa Sentience & Cleanliness Eval
 
-## System Overview
-Architecture overview for Ayeixa Sentience & Cleanliness Eval
+## Overview
+Sentience Eval provides automated assertion filters to prevent conversational agent regressions and raw JSON leaks.
 
-## Architecture Diagram (Mermaid)
+## System Topology
 ```mermaid
 flowchart TD
-    Client["Client Application / Runtime"] --> Router["Ayeixa Sentience & Cleanliness Eval Core"]
-    Router --> Engine["Execution & Boundary Engine"]
-    Engine --> Output["Verified Output / State"]
+    Output["Agent Text Output"] --> JsonDetector["Raw JSON Leak Detector"]
+    Output --> Hallucination["Hallucination & Factual Grounding"]
+    Output --> Cleanliness["Behavioral Cleanliness Suite"]
+    JsonDetector & Hallucination & Cleanliness --> Benchmark["Benchmark Aggregator & Score Engine"]
 ```
-
-## Design Guarantees
-- **Permissive & Standalone**: Operates hermetically without proprietary enterprise lock-in.
-- **Fail-Closed**: Rejects malformed or untrusted inputs at boundary layer.
