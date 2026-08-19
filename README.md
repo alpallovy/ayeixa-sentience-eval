@@ -5,6 +5,8 @@
 ## Status: Pre-Release (v0.1.0-alpha)
 *Note: Public npm registry publication is pending. To use or evaluate this package, clone and build locally.*
 
+**10-minute try:** see [`TRY_10MIN.md`](./TRY_10MIN.md) → `npm run quicktry`
+
 ## Features
 - **Raw JSON & State Leak Detection**: Pinpoints unescaped JSON structures, raw system metadata, and delimiter violations in conversational agent outputs.
 - **Factual Grounding & Hallucination Checks**: Evaluates response claims against ground truth facts and flags unsupported assertions.
@@ -39,16 +41,13 @@ console.log("Violations Detected:", report.violations);
 
 ## Feedback & real-world use
 
-If you try this project in a real workflow, share technical feedback — including negative results or integration problems — in [Discussions](https://github.com/alpallovy/ayeixa-sentience-eval/discussions/2). Participation is voluntary; no payment required. With explicit permission, useful experiences may become attributed or anonymized case studies.
+If you try this project in a real workflow, share **concrete** technical feedback in [Discussions](https://github.com/alpallovy/ayeixa-sentience-eval/discussions/2) or a [GitHub issue](https://github.com/alpallovy/ayeixa-sentience-eval/issues). Optional case-study flow: [OpenCoordinator hub](https://github.com/alpallovy/ayeixa-open-coordinator/discussions/6).
 
 ## License
 Distributed under the **MIT** License. See `LICENSE` for details.
 
 ## Engineering blog
 
+- [How to evaluate AYEIXA OSS](https://alpallovy.github.io/ayeixa-blog/blog/how-to-evaluate-ayeixa-oss)
 - [AYEIXA engineering blog index](https://alpallovy.github.io/ayeixa-blog/)
 - [DEV Community intro](https://dev.to/alp_allovi_45214d2d8316a1/introducing-ayeixa-sentience-eval-catching-raw-json-leaks-robotic-cliches-in-agent-dialogue-25e9)
-
-## Feedback
-
-After local evaluation (`npm test`), open a [GitHub issue](https://github.com/alpallovy/ayeixa-sentience-eval/issues) with integration feedback.
