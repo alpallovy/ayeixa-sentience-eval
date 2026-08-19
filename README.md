@@ -37,8 +37,18 @@ console.log("Cleanliness Score:", report.cleanlinessScore);
 console.log("Violations Detected:", report.violations);
 ```
 
+## Feedback & real-world use
+
+If you try this project in a real workflow, share technical feedback — including negative results or integration problems — in [Discussions](https://github.com/alpallovy/ayeixa-sentience-eval/discussions/2). Participation is voluntary; no payment required. With explicit permission, useful experiences may become attributed or anonymized case studies.
+
 ## License
 Distributed under the **MIT** License. See `LICENSE` for details.
 
-## Technical Deep Dive
-Read the full launch technical article: [`docs/blog/introducing-ayeixa-sentience-eval.md`](docs/blog/introducing-ayeixa-sentience-eval.md)
+## Engineering blog
+
+- [AYEIXA engineering blog index](https://alpallovy.github.io/ayeixa-blog/)
+- [DEV Community intro](https://dev.to/alp_allovi_45214d2d8316a1/introducing-ayeixa-sentience-eval-catching-raw-json-leaks-robotic-cliches-in-agent-dialogue-25e9)
+
+## Feedback
+
+After local evaluation (`npm test`), open a [GitHub issue](https://github.com/alpallovy/ayeixa-sentience-eval/issues) with integration feedback.
